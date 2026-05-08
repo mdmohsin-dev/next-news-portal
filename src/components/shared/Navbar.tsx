@@ -1,10 +1,14 @@
+'use client'
+
 import Link from "next/link"
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "../ui/navigation-menu"
 import { Switch } from "../ui/switch"
 import { Button } from "../ui/button"
 import { IoIosMenu } from "react-icons/io"
+import { usePathname } from "next/navigation"
 
 const Navbar = () => {
+    const pathname = usePathname()
     return (
         <header className="py-4 shadow-md">
             <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
@@ -15,7 +19,7 @@ const Navbar = () => {
                 <NavigationMenu className="hidden lg:flex">
                     <NavigationMenuList>
                         <NavigationMenuItem>
-                            <NavigationMenuLink href="/news">News</NavigationMenuLink>
+                            <NavigationMenuLink className={`${pathname === '/news'&&'text-red-500 font-semibold'}`} href="/news">News</NavigationMenuLink>
 
                             <NavigationMenuLink href="/services">
                                 <NavigationMenuTrigger> Services</NavigationMenuTrigger>
@@ -28,9 +32,9 @@ const Navbar = () => {
                                 </NavigationMenuContent>
                             </NavigationMenuLink>
 
-                            <NavigationMenuLink href="/news">About</NavigationMenuLink>
+                            <NavigationMenuLink className={`${pathname === '/about'&&'text-red-500 font-semibold'}`} href="/about">About</NavigationMenuLink>
 
-                            <NavigationMenuLink href="/news">Contact</NavigationMenuLink>
+                            <NavigationMenuLink className={`${pathname === '/contact'&&'text-red-500 font-semibold'}`} href="/contact">Contact</NavigationMenuLink>
 
                         </NavigationMenuItem>
                     </NavigationMenuList>
@@ -43,7 +47,7 @@ const Navbar = () => {
                     </div>
                 </div>
                 <div className="lg:hidden">
-<IoIosMenu size={35}></IoIosMenu>
+                    <IoIosMenu size={35}></IoIosMenu>
                 </div>
             </nav>
         </header>
