@@ -1,8 +1,6 @@
-import React from 'react'
-
 const page = () => {
   return (
-    <div>All News</div>
+    <div className='mt-10'>All News</div>
   )
 }
 

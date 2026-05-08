@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import cardImg from "../../assets/ai.jpg"
 import Image from 'next/image'
 import { Button } from '../ui/button'
 import { NewsCardProps } from '@/types/news'
