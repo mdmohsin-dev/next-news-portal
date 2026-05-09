@@ -8,7 +8,7 @@ const NewsCard = ({ item }: NewsCardProps) => {
     return (
         <div className='border p-4 rounded-md shadow-md flex flex-col justify-between'>
             <Link href={`/news/${_id}`}>
-                <Image src={imageUrl} alt='news image' width={100} height={100} className='rounded-md md:h-56 w-full' />
+                <Image src={imageUrl} alt='news image' width={100} height={100} priority className='rounded-md md:h-56 w-full' />
             </Link>
             <div>
                 <h2 className='text-xl font-semibold py-5'>{title.substring(0,65)}...</h2>
