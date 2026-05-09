@@ -1,4 +1,4 @@
-export const fetchNews = async (category: string = "", search: string = "") => {
+export const fetchNews = async () => {
     try {
         const response = await fetch("/db.json")
         const data = await response.json()

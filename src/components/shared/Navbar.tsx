@@ -46,7 +46,7 @@ const Navbar = () => {
                     </NavigationMenuList>
                 </NavigationMenu>
                 <div className="hidden lg:flex items-center">
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center">
                         <span>{isDarkMode ? 'Light Mode' : 'Dark Mode'}</span>
                         <Button
                         onClick={toggleTheme}

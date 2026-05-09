@@ -1,22 +1,43 @@
 import { NewsItem } from "@/types/news";
 import Image from "next/image";
 
-export const revalidate=60
+type NewsDetailsProps = {
+  params: Promise<{
+    id: string;
+  }>;
+};
 
-export const dynamicParams = true;
+const Page = async ({ params }: NewsDetailsProps) => {
 
-export async function generateStaticParams() {
-    const posts:NewsItem[]=await fetch('')
-    .then(res =>res.json())
-    return posts.map((post)=>({
-        id:String(post._id),
-    }))
-}
+  const { id } = await params;
 
-const page = () => {
+  const res = await fetch("http://localhost:3000/db.json");
+
+  const news: NewsItem[] = await res.json();
+
+  const singleNews = news.find(
+    item => item._id === id
+  );
+
+  if (!singleNews) {
+    return <h1>News not found</h1>;
+  }
+
   return (
-    <div>Nes details</div>
-  )
-}
+    <div className="max-w-3xl mx-auto bg-[#F1F5F9] p-4 rounded-md mt-10">
+      <div>
+        <Image src={singleNews.imageUrl} width={500} height={500} alt="newImage" className="w-full rounded-md" />
+        <div className="mt-7">
+          <h3 className="text-2xl font-bold pt-5">{singleNews.title}</h3>
+          <div className="pt-5 flex justify-between">
+            <p>{new Date(singleNews.published_at).toLocaleString()}</p>
+            <p>Source:{singleNews.source}</p>
+          </div>
+          <p className="pt-5">{singleNews.description}</p>
+        </div>
+      </div>
+    </div>
+  );
+};
 
-export default page
+export default Page;
