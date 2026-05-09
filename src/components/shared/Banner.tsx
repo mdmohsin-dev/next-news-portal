@@ -6,7 +6,7 @@ import bannerImg from "../../assets/banner.jpg"
 
 const Banner = () => {
     return (
-        <div className='bg-slate-100 flex items-center p-5 gap-8 rounded-md mt-10'>
+        <div className='bg-slate-100 flex items-center p-5 gap-8 rounded-md mt-10 dark:text-black'>
             <div className='w-1/2'>
                 <Image src={bannerImg} alt='bannerimge' className='rounded-sm'/>
             </div>
