@@ -24,7 +24,7 @@ const Page = async ({ params }: NewsDetailsProps) => {
   }
 
   return (
-    <div className="max-w-3xl mx-auto bg-[#F1F5F9] p-4 rounded-md mt-10">
+    <div className="max-w-3xl mx-auto bg-[#F1F5F9] p-4 rounded-md mt-10 dark:text-black">
       <div>
         <Image src={singleNews.imageUrl} width={500} height={500} alt="newImage" className="w-full rounded-md" />
         <div className="mt-7">

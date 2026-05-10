@@ -25,7 +25,7 @@ const Navbar = () => {
                 <NavigationMenu className="hidden lg:flex">
                     <NavigationMenuList>
                         <NavigationMenuItem>
-                            <NavigationMenuLink className={`${pathname === '/news' && 'text-red-500 font-semibold'}`} href="/news">News</NavigationMenuLink>
+                            <Link className={`${pathname === '/news' && 'text-red-500 font-semibold'} text-lg`} href="/news">News</Link>
 
                             <NavigationMenuLink href="/services">
                                 <NavigationMenuTrigger> Services</NavigationMenuTrigger>
@@ -38,9 +38,9 @@ const Navbar = () => {
                                 </NavigationMenuContent>
                             </NavigationMenuLink>
 
-                            <NavigationMenuLink className={`${pathname === '/about' && 'text-red-500 font-semibold'}`} href="/about">About</NavigationMenuLink>
+                            <Link className={`${pathname === '/about' && 'text-red-500 font-semibold'} text-lg`} href="/about">About</Link>
 
-                            <NavigationMenuLink className={`${pathname === '/contact' && 'text-red-500 font-semibold'}`} href="/contact">Contact</NavigationMenuLink>
+                            <Link className={`${pathname === '/contact' && 'text-red-500 font-semibold'} text-lg`} href="/contact">Contact</Link>
 
                         </NavigationMenuItem>
                     </NavigationMenuList>
