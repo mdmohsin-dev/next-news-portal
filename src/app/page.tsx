@@ -1,13 +1,13 @@
 import Banner from "@/components/shared/Banner";
 import NewsCard from "@/components/shared/NewsCard";
 import NewsLetter from "@/components/shared/NewsLetter";
+import { fetchNews } from "@/lib/FetchNews";
 import { NewsItem } from "@/types/news";
 
 const Home = async () => {
 
-  const data = await fetch('http://localhost:3000/db.json')
-  const news = await data.json()
-  console.log(news)
+  
+  const news:NewsItem[] = await fetchNews()
 
   return (
     <div>

@@ -1,3 +1,4 @@
+import { fetchNews } from "@/lib/FetchNews";
 import { NewsItem } from "@/types/news";
 import Image from "next/image";
 
@@ -11,9 +12,8 @@ const Page = async ({ params }: NewsDetailsProps) => {
 
   const { id } = await params;
 
-  const res = await fetch("http://localhost:3000/db.json");
 
-  const news: NewsItem[] = await res.json();
+  const news: NewsItem[] = await fetchNews()
 
   const singleNews = news.find(
     item => item._id === id
